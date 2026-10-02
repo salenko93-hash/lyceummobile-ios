@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		E7925B0DDE5440E42D6EDDD1 = { isa = PBXFileReference; lastKnownFileType = text.xml; path = "PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		341569F40D59F74145C6DFA9 = { isa = PBXBuildFile; fileRef = E7925B0DDE5440E42D6EDDD1 /* PrivacyInfo.xcprivacy */; };
+		A3D37B557F53EB660198F27A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models.swift"; sourceTree = "<group>"; };
+		D253ABA6B930E52841B400B6 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEngine.swift"; sourceTree = "<group>"; };
+		A9B978B17407C5063CE1E2E6 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LyceumMobileApp.swift"; sourceTree = "<group>"; };
+		F2E3EFDA2D24F86647AB5973 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertsService.swift"; sourceTree = "<group>"; };
+		4090BA7FA89BF737B7C69C94 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel.swift"; sourceTree = "<group>"; };
+		C60BD357696B40FE5540DAF3 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings.swift"; sourceTree = "<group>"; };
+		819273C06F7B8855FA483519 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentService.swift"; sourceTree = "<group>"; };
+		475766D4D44A7E8A593AA388 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPSClient.swift"; sourceTree = "<group>"; };
+		033DFA440C57EB82AF338BCB = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainTokenStore.swift"; sourceTree = "<group>"; };
+		EB5C0CD654F901A9D1F1F798 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleStore.swift"; sourceTree = "<group>"; };
+		599C2C129EB89292F6FA835F = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SilenceMetronome.swift"; sourceTree = "<group>"; };
+		CA01B0FBBB1D8A9DC1AFB2D0 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherService.swift"; sourceTree = "<group>"; };
+		D54290B3B1A346AAB75BE171 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnnouncementsView.swift"; sourceTree = "<group>"; };
+		FC6E3B263BA7861C9E908E6B = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView.swift"; sourceTree = "<group>"; };
+		668E04700A1892FBCD2F81E2 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmergencyView.swift"; sourceTree = "<group>"; };
+		EA22038DC41A0ADABAD50496 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MinuteSilenceView.swift"; sourceTree = "<group>"; };
+		CFDA27D80B4B4E8C74E2B685 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
+		17D5EC0799172427992340E2 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		57F71EAF87C2F3A193164B5A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimetableView.swift"; sourceTree = "<group>"; };
+		B3F8401387030D33902003E7 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIComponents.swift"; sourceTree = "<group>"; };
+		0A58A41316B0B8106BD9653E = { isa = PBXFileReference; lastKnownFileType = text.json; path = "calendar.json"; sourceTree = "<group>"; };
+		86CF7DAD4628656E194E7DEC = { isa = PBXFileReference; lastKnownFileType = audio.wav; path = "metronome_tick.wav"; sourceTree = "<group>"; };
+		645797AD38DFB2D5F798F218 = { isa = PBXFileReference; lastKnownFileType = text.json; path = "schedule_denominator.json"; sourceTree = "<group>"; };
+		8ADBE69E0E4BE9402A059A18 = { isa = PBXFileReference; lastKnownFileType = text.json; path = "schedule_numerator.json"; sourceTree = "<group>"; };
+		D5C528D5985E53BCD6BF0ACF = { isa = PBXFileReference; lastKnownFileType = text.json; path = "shelter_denominator.json"; sourceTree = "<group>"; };
+		3B56D0ACD79AB76E458E84CC = { isa = PBXFileReference; lastKnownFileType = text.json; path = "shelter_numerator.json"; sourceTree = "<group>"; };
+		501084A9EC7DF708B3156D4F = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		DC3276628FF169E2F35C67D4 = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		88C7A2AE76DEB0521A3E55B7 = { isa = PBXBuildFile; fileRef = A3D37B557F53EB660198F27A /* Models.swift */; };
+		E679C50827D4605F3A6B6D5B = { isa = PBXBuildFile; fileRef = D253ABA6B930E52841B400B6 /* ScheduleEngine.swift */; };
+		E19FD16382847133CC69D85C = { isa = PBXBuildFile; fileRef = A9B978B17407C5063CE1E2E6 /* LyceumMobileApp.swift */; };
+		B180BEE490A5E8817CB6CF4F = { isa = PBXBuildFile; fileRef = F2E3EFDA2D24F86647AB5973 /* AlertsService.swift */; };
+		B2B5CA427217C54E7BAB6206 = { isa = PBXBuildFile; fileRef = 4090BA7FA89BF737B7C69C94 /* AppModel.swift */; };
+		C1DB2AFFE11B38B70CEBD671 = { isa = PBXBuildFile; fileRef = C60BD357696B40FE5540DAF3 /* AppSettings.swift */; };
+		33DC0E78705352E50F33BE64 = { isa = PBXBuildFile; fileRef = 819273C06F7B8855FA483519 /* ContentService.swift */; };
+		ADF99B098CD99240409ECC27 = { isa = PBXBuildFile; fileRef = 475766D4D44A7E8A593AA388 /* HTTPSClient.swift */; };
+		13F7EC0846451C4441390DD6 = { isa = PBXBuildFile; fileRef = 033DFA440C57EB82AF338BCB /* KeychainTokenStore.swift */; };
+		DA33F31F9AA1A9939E145AED = { isa = PBXBuildFile; fileRef = EB5C0CD654F901A9D1F1F798 /* ScheduleStore.swift */; };
+		061787CA76A1B5D561E4B263 = { isa = PBXBuildFile; fileRef = 599C2C129EB89292F6FA835F /* SilenceMetronome.swift */; };
+		ED712592184733058BC9C2A4 = { isa = PBXBuildFile; fileRef = CA01B0FBBB1D8A9DC1AFB2D0 /* WeatherService.swift */; };
+		BA4AD2388B7BC1EB5B2A9B69 = { isa = PBXBuildFile; fileRef = D54290B3B1A346AAB75BE171 /* AnnouncementsView.swift */; };
+		C32EA2640D8C1FC880631A38 = { isa = PBXBuildFile; fileRef = FC6E3B263BA7861C9E908E6B /* DashboardView.swift */; };
+		7E4863355AFC0480133D4B28 = { isa = PBXBuildFile; fileRef = 668E04700A1892FBCD2F81E2 /* EmergencyView.swift */; };
+		3AC5F5186A8800D4CA968751 = { isa = PBXBuildFile; fileRef = EA22038DC41A0ADABAD50496 /* MinuteSilenceView.swift */; };
+		F7AF6920F03A1B03C2FEAE6B = { isa = PBXBuildFile; fileRef = CFDA27D80B4B4E8C74E2B685 /* RootView.swift */; };
+		6E2260797C78944ED71705A1 = { isa = PBXBuildFile; fileRef = 17D5EC0799172427992340E2 /* SettingsView.swift */; };
+		21A1EE684AB26D0B92D22B65 = { isa = PBXBuildFile; fileRef = 57F71EAF87C2F3A193164B5A /* TimetableView.swift */; };
+		190632232F4DC808488B9D70 = { isa = PBXBuildFile; fileRef = B3F8401387030D33902003E7 /* UIComponents.swift */; };
+		7D628707458D79EE978906B5 = { isa = PBXBuildFile; fileRef = 0A58A41316B0B8106BD9653E /* calendar.json */; };
+		074A9134CE37B2119DFDBDB3 = { isa = PBXBuildFile; fileRef = 86CF7DAD4628656E194E7DEC /* metronome_tick.wav */; };
+		D95B6DDF424EBDA936A68FAC = { isa = PBXBuildFile; fileRef = 645797AD38DFB2D5F798F218 /* schedule_denominator.json */; };
+		CDCF51EB852D2E62061AB644 = { isa = PBXBuildFile; fileRef = 8ADBE69E0E4BE9402A059A18 /* schedule_numerator.json */; };
+		9F9102545C62FF0F9BBB514D = { isa = PBXBuildFile; fileRef = D5C528D5985E53BCD6BF0ACF /* shelter_denominator.json */; };
+		A15D1AC9E25FDEC516E90BC7 = { isa = PBXBuildFile; fileRef = 3B56D0ACD79AB76E458E84CC /* shelter_numerator.json */; };
+		2E987DB6A555F06688BD4D96 = { isa = PBXBuildFile; fileRef = DC3276628FF169E2F35C67D4 /* Assets.xcassets */; };
+		4F72B0C8042C987981B8B9A6 = { isa = PBXGroup; children = (
+				A3D37B557F53EB660198F27A /* Models.swift */,
+				D253ABA6B930E52841B400B6 /* ScheduleEngine.swift */,
+			); path = "Core"; sourceTree = "<group>"; };
+		5332F1758A25A1B7A4ECE2CF = { isa = PBXGroup; children = (
+				F2E3EFDA2D24F86647AB5973 /* AlertsService.swift */,
+				4090BA7FA89BF737B7C69C94 /* AppModel.swift */,
+				C60BD357696B40FE5540DAF3 /* AppSettings.swift */,
+				819273C06F7B8855FA483519 /* ContentService.swift */,
+				475766D4D44A7E8A593AA388 /* HTTPSClient.swift */,
+				033DFA440C57EB82AF338BCB /* KeychainTokenStore.swift */,
+				EB5C0CD654F901A9D1F1F798 /* ScheduleStore.swift */,
+				599C2C129EB89292F6FA835F /* SilenceMetronome.swift */,
+				CA01B0FBBB1D8A9DC1AFB2D0 /* WeatherService.swift */,
+			); path = "Services"; sourceTree = "<group>"; };
+		15CB3A97E8D1F235089108E0 = { isa = PBXGroup; children = (
+				D54290B3B1A346AAB75BE171 /* AnnouncementsView.swift */,
+				FC6E3B263BA7861C9E908E6B /* DashboardView.swift */,
+				668E04700A1892FBCD2F81E2 /* EmergencyView.swift */,
+				EA22038DC41A0ADABAD50496 /* MinuteSilenceView.swift */,
+				CFDA27D80B4B4E8C74E2B685 /* RootView.swift */,
+				17D5EC0799172427992340E2 /* SettingsView.swift */,
+				57F71EAF87C2F3A193164B5A /* TimetableView.swift */,
+				B3F8401387030D33902003E7 /* UIComponents.swift */,
+			); path = "Views"; sourceTree = "<group>"; };
+		394AF798B3E7B74F02249797 = { isa = PBXGroup; children = (
+				E7925B0DDE5440E42D6EDDD1 /* PrivacyInfo.xcprivacy */,
+				0A58A41316B0B8106BD9653E /* calendar.json */,
+				86CF7DAD4628656E194E7DEC /* metronome_tick.wav */,
+				645797AD38DFB2D5F798F218 /* schedule_denominator.json */,
+				8ADBE69E0E4BE9402A059A18 /* schedule_numerator.json */,
+				D5C528D5985E53BCD6BF0ACF /* shelter_denominator.json */,
+				3B56D0ACD79AB76E458E84CC /* shelter_numerator.json */,
+			); path = "Resources"; sourceTree = "<group>"; };
+		A09D936E97B67BFECECA686B = { isa = PBXGroup; children = (
+				A9B978B17407C5063CE1E2E6 /* LyceumMobileApp.swift */,
+				4F72B0C8042C987981B8B9A6 /* Core */,
+				5332F1758A25A1B7A4ECE2CF /* Services */,
+				15CB3A97E8D1F235089108E0 /* Views */,
+				394AF798B3E7B74F02249797 /* Resources */,
+				DC3276628FF169E2F35C67D4 /* Assets.xcassets */,
+				501084A9EC7DF708B3156D4F /* Info.plist */,
+			); path = "LyceumMobile"; sourceTree = "<group>"; };
+		13A36853F0EC2AEF696F73F2 = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyceumMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4183E58B3100C997E5C3BBD3 = { isa = PBXGroup; children = (
+				13A36853F0EC2AEF696F73F2 /* LyceumMobile.app */,
+			); sourceTree = "<group>"; };
+		61CF23FD79CAB7EA728F9458 = { isa = PBXGroup; children = (
+				A09D936E97B67BFECECA686B /* LyceumMobile */,
+				4183E58B3100C997E5C3BBD3 /* Products */,
+			); sourceTree = "<group>"; };
+		28BE49E1E42D704C38EEA420 = {
+    isa = PBXSourcesBuildPhase;
+    buildActionMask = 2147483647;
+    files = (
+        88C7A2AE76DEB0521A3E55B7 /* Models.swift */,
+        E679C50827D4605F3A6B6D5B /* ScheduleEngine.swift */,
+        E19FD16382847133CC69D85C /* LyceumMobileApp.swift */,
+        B180BEE490A5E8817CB6CF4F /* AlertsService.swift */,
+        B2B5CA427217C54E7BAB6206 /* AppModel.swift */,
+        C1DB2AFFE11B38B70CEBD671 /* AppSettings.swift */,
+        33DC0E78705352E50F33BE64 /* ContentService.swift */,
+        ADF99B098CD99240409ECC27 /* HTTPSClient.swift */,
+        13F7EC0846451C4441390DD6 /* KeychainTokenStore.swift */,
+        DA33F31F9AA1A9939E145AED /* ScheduleStore.swift */,
+        061787CA76A1B5D561E4B263 /* SilenceMetronome.swift */,
+        ED712592184733058BC9C2A4 /* WeatherService.swift */,
+        BA4AD2388B7BC1EB5B2A9B69 /* AnnouncementsView.swift */,
+        C32EA2640D8C1FC880631A38 /* DashboardView.swift */,
+        7E4863355AFC0480133D4B28 /* EmergencyView.swift */,
+        3AC5F5186A8800D4CA968751 /* MinuteSilenceView.swift */,
+        F7AF6920F03A1B03C2FEAE6B /* RootView.swift */,
+        6E2260797C78944ED71705A1 /* SettingsView.swift */,
+        21A1EE684AB26D0B92D22B65 /* TimetableView.swift */,
+        190632232F4DC808488B9D70 /* UIComponents.swift */,
+    );
+    runOnlyForDeploymentPostprocessing = 0;
+};
+		E26E44B743A848DED8844ED9 = {
+    isa = PBXResourcesBuildPhase;
+    buildActionMask = 2147483647;
+    files = (
+		341569F40D59F74145C6DFA9 /* PrivacyInfo.xcprivacy */,
+        7D628707458D79EE978906B5 /* calendar.json */,
+        074A9134CE37B2119DFDBDB3 /* metronome_tick.wav */,
+        D95B6DDF424EBDA936A68FAC /* schedule_denominator.json */,
+        CDCF51EB852D2E62061AB644 /* schedule_numerator.json */,
+        9F9102545C62FF0F9BBB514D /* shelter_denominator.json */,
+        A15D1AC9E25FDEC516E90BC7 /* shelter_numerator.json */,
+        2E987DB6A555F06688BD4D96 /* Assets.xcassets */,
+    );
+    runOnlyForDeploymentPostprocessing = 0;
+};
+		CA8003021206097066E984FF = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		39F38055C28EE52A92214F0E = { isa = XCBuildConfiguration; buildSettings = {
+      ALWAYS_SEARCH_USER_PATHS = NO;
+      CLANG_ENABLE_MODULES = YES;
+      CODE_SIGN_STYLE = Automatic;
+      IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+      SDKROOT = iphoneos;
+      SWIFT_VERSION = 5.0;
+      TARGETED_DEVICE_FAMILY = 1;
+    }; name = Debug; };
+		A08F6D2713DF87B08CEEDC19 = { isa = XCBuildConfiguration; buildSettings = {
+      ALWAYS_SEARCH_USER_PATHS = NO;
+      CLANG_ENABLE_MODULES = YES;
+      CODE_SIGN_STYLE = Automatic;
+      IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+      SDKROOT = iphoneos;
+      SWIFT_VERSION = 5.0;
+      TARGETED_DEVICE_FAMILY = 1;
+    }; name = Release; };
+		BFBBACF6C1E902F47DE72CFC = { isa = XCBuildConfiguration; buildSettings = {
+      ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      CLANG_ENABLE_MODULES = YES;
+      CODE_SIGN_STYLE = Automatic;
+      CURRENT_PROJECT_VERSION = 1;
+      GENERATE_INFOPLIST_FILE = NO;
+      INFOPLIST_FILE = LyceumMobile/Info.plist;
+      IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+      LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+      MARKETING_VERSION = 1.0;
+      PRODUCT_BUNDLE_IDENTIFIER = ua.edu.cunl.lyceummobile;
+      PRODUCT_NAME = "$(TARGET_NAME)";
+      SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+      SWIFT_EMIT_LOC_STRINGS = YES;
+      SWIFT_VERSION = 5.0;
+      TARGETED_DEVICE_FAMILY = 1;
+      SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+    }; name = Debug; };
+		639CB0C994DE9064B36EC65B = { isa = XCBuildConfiguration; buildSettings = {
+      ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      CLANG_ENABLE_MODULES = YES;
+      CODE_SIGN_STYLE = Automatic;
+      CURRENT_PROJECT_VERSION = 1;
+      GENERATE_INFOPLIST_FILE = NO;
+      INFOPLIST_FILE = LyceumMobile/Info.plist;
+      IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+      LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+      MARKETING_VERSION = 1.0;
+      PRODUCT_BUNDLE_IDENTIFIER = ua.edu.cunl.lyceummobile;
+      PRODUCT_NAME = "$(TARGET_NAME)";
+      SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+      SWIFT_EMIT_LOC_STRINGS = YES;
+      SWIFT_VERSION = 5.0;
+      TARGETED_DEVICE_FAMILY = 1;
+      SWIFT_OPTIMIZATION_LEVEL = "-O";
+    }; name = Release; };
+		3D29D9F3A882C4202964FB56 = {
+    isa = XCConfigurationList;
+    buildConfigurations = (
+      39F38055C28EE52A92214F0E /* Debug */,
+      A08F6D2713DF87B08CEEDC19 /* Release */,
+    );
+    defaultConfigurationIsVisible = 0;
+    defaultConfigurationName = Release;
+  };
+		D28A2B497FA98060CD1B56AC = {
+    isa = XCConfigurationList;
+    buildConfigurations = (
+      BFBBACF6C1E902F47DE72CFC /* Debug */,
+      639CB0C994DE9064B36EC65B /* Release */,
+    );
+    defaultConfigurationIsVisible = 0;
+    defaultConfigurationName = Release;
+  };
+		3B6BA8D3EA4CFBC5994D6FC1 = {
+  isa = PBXNativeTarget;
+  buildConfigurationList = D28A2B497FA98060CD1B56AC /* Target configuration list */;
+  buildPhases = (
+    28BE49E1E42D704C38EEA420 /* Sources */,
+    CA8003021206097066E984FF /* Frameworks */,
+    E26E44B743A848DED8844ED9 /* Resources */,
+  );
+  buildRules = ();
+  dependencies = ();
+  name = LyceumMobile;
+  productName = LyceumMobile;
+  productReference = 13A36853F0EC2AEF696F73F2 /* LyceumMobile.app */;
+  productType = "com.apple.product-type.application";
+};
+		98F54143AB4E86B28C3AFEE0 = {
+  isa = PBXProject;
+  attributes = {
+    BuildIndependentTargetsInParallel = YES;
+    LastUpgradeCheck = 1500;
+    TargetAttributes = { 3B6BA8D3EA4CFBC5994D6FC1 = { CreatedOnToolsVersion = 15.0; }; };
+  };
+  buildConfigurationList = 3D29D9F3A882C4202964FB56 /* Project configuration list */;
+  compatibilityVersion = "Xcode 14.0";
+  developmentRegion = uk;
+  hasScannedForEncodings = 0;
+  knownRegions = (uk, en, Base);
+  mainGroup = 61CF23FD79CAB7EA728F9458;
+  productRefGroup = 4183E58B3100C997E5C3BBD3 /* Products */;
+  projectDirPath = "";
+  projectRoot = "";
+  targets = (3B6BA8D3EA4CFBC5994D6FC1 /* LyceumMobile */);
+};
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}
