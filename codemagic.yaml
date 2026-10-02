@@ -1,0 +1,55 @@
+workflows:
+  # Start with this workflow from Windows. It compiles the native app on
+  # a cloud Mac WITHOUT signing; the resulting app cannot be installed on iPhone.
+  ios-compile:
+    name: LyceumMobile iOS - compile (unsigned)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      xcode: latest
+    scripts:
+      - name: Test shared timetable and substitution engine
+        script: swift test --jobs 2
+      - name: Compile iOS app without signing
+        script: |
+          set -e
+          xcodebuild \
+            -project LyceumMobile.xcodeproj \
+            -scheme LyceumMobile \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build/ios \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+    artifacts:
+      - build/ios/Build/Products/Release-iphoneos/LyceumMobile.app
+      - /tmp/xcodebuild_logs/*.log
+
+  # AFTER your Apple Developer enrollment, connect an App Store Connect
+  # integration under the exact name LyceumMobile_AppStore and set up
+  # automatic App Store signing for bundle ID ua.edu.cunl.lyceummobile.
+  ios-testflight:
+    name: LyceumMobile iOS - signed IPA
+    max_build_duration: 90
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: LyceumMobile_AppStore
+    environment:
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: ua.edu.cunl.lyceummobile
+    scripts:
+      - name: Test the portable timetable engine
+        script: swift test --jobs 2
+      - name: Apply Apple certificates and provisioning profiles
+        script: xcode-project use-profiles
+      - name: Build and export signed native IPA
+        script: |
+          set -e
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/LyceumMobile.xcodeproj" \
+            --scheme "LyceumMobile"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
