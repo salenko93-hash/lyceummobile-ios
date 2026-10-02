@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""Data-level regression checks; does NOT replace an Xcode/iOS build."""
+from pathlib import Path
+import json
+import re
+import sys
+import plistlib
+import hashlib
+
+root = Path(__file__).resolve().parents[1]
+resource = root / "LyceumMobile/Resources"
+filenames = (
+    "schedule_numerator.json", "schedule_denominator.json",
+    "shelter_numerator.json", "shelter_denominator.json",
+)
+canonical_classes = {"10-А", "10-Б", "10-В", "10-Г",
+                     "11-А", "11-Б", "11-В", "11-Г"}
+for file in filenames:
+    obj = json.loads((resource / file).read_text(encoding="utf8"))
+    assert obj["weekType"] == ("NUMERATOR" if file.endswith("numerator.json")
+                                and "denominator" not in file else "DENOMINATOR"), file
+    assert len(obj["bellSchedule"]) == 8, file
+    for day, lessons in obj["days"].items():
+        assert day in {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"}
+        for lesson, classes in lessons.items():
+            assert lesson.isdigit()
+            for klass, items in classes.items():
+                assert klass in canonical_classes, (file, klass)
+                assert all(all(k in e for k in ("subject", "room", "teacher")) for e in items)
+    print(f"OK {file}: 8 bells, valid day/class structure")
+calendar = json.loads((resource/"calendar.json").read_text(encoding="utf8"))
+assert "daysOff" in calendar and "ranges" in calendar
+plistlib.loads((root/"LyceumMobile/Info.plist").read_bytes())
+manifest_code = (root/"LyceumMobile/Services/ScheduleStore.swift").read_text(encoding="utf8")
+alert_code = (root/"LyceumMobile/Services/AlertsService.swift").read_text(encoding="utf8")
+metronome_code = (root/"LyceumMobile/Services/SilenceMetronome.swift").read_text(encoding="utf8")
+assert "SHA256.hash" in manifest_code
+assert "81.json" in alert_code and 'case active = "A"' in alert_code
+assert "Timer(timeInterval: 1.0" in metronome_code
+assert "AVAudioSession" in metronome_code
+appfiles = list((root/"LyceumMobile").rglob("*.swift"))
+assert len(appfiles) >= 18, len(appfiles)
+print(f"OK {len(appfiles)} Swift source files, four offline timetables, iOS Info.plist.")
