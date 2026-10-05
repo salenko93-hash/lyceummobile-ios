@@ -78,6 +78,6 @@ struct EmergencyView: View {
             .padding(.horizontal, 16)
         }
         .background(Brand.danger.ignoresSafeArea())
-        .toolbar(.hidden, for: .navigationBar)
+        .navigationBarHidden(true)
     }
 }

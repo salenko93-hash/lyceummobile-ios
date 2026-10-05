@@ -42,7 +42,6 @@ struct MinuteSilenceView: View {
                 Text(isFullscreen ? "\(secondsRemaining)" : "09:00 — 09:01")
                     .font(.system(size: 48, weight: .light, design: .monospaced))
                     .foregroundStyle(Brand.gold)
-                    .contentTransition(.numericText())
                     .accessibilityLabel(isFullscreen
                                         ? "Залишилося \(secondsRemaining) секунд"
                                         : "Щодня з 9 до 9:01")

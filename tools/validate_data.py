@@ -70,3 +70,21 @@ assert "Date.FormatStyle" not in core_code
 assert ".formatted(style)" not in core_code
 assert 'formatter.dateFormat = "HH:mm"' in core_code
 print("OK shared Core avoids macOS 12-only Date.FormatStyle APIs.")
+
+ui_sources = "\n".join(
+    source.read_text(encoding="utf8")
+    for source in (root/"LyceumMobile/Views").rglob("*.swift")
+)
+assert ".toolbar(.hidden, for: .navigationBar)" not in ui_sources
+assert ".contentTransition(" not in ui_sources
+assert ".numericText()" not in ui_sources
+assert ".navigationBarHidden(true)" in ui_sources
+print("OK iOS 15 navigation-bar and numeric-text compatibility guards.")
+
+all_swift_ui = "\n".join(
+    source.read_text(encoding="utf8")
+    for source in (root/"LyceumMobile").rglob("*.swift")
+)
+assert ".tracking(" not in all_swift_ui
+assert ".kerning(" in all_swift_ui
+print("OK iOS 15 text-spacing compatibility: no SwiftUI .tracking().")

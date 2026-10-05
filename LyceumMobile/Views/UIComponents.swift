@@ -33,7 +33,7 @@ struct SectionCaption: View {
     var body: some View {
         Text(text.uppercased())
             .font(.system(size: 12, weight: .bold, design: .rounded))
-            .tracking(1.6)
+            .kerning(1.6)
             .foregroundStyle(Brand.blue)
     }
 }
