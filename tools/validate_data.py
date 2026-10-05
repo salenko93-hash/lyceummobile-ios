@@ -86,5 +86,5 @@ all_swift_ui = "\n".join(
     for source in (root/"LyceumMobile").rglob("*.swift")
 )
 assert ".tracking(" not in all_swift_ui
-assert ".kerning(" in all_swift_ui
-print("OK iOS 15 text-spacing compatibility: no SwiftUI .tracking().")
+assert ".kerning(" not in all_swift_ui
+print("OK iOS 15 text-spacing compatibility: no .tracking()/.kerning().")

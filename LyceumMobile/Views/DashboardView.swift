@@ -32,7 +32,6 @@ struct DashboardView: View {
                         VStack(alignment: .leading, spacing: 5) {
                             Label("КРОПИВНИЦЬКИЙ", systemImage: "location.fill")
                                 .font(.caption2.weight(.bold))
-                                .kerning(1.4)
                                 .foregroundStyle(Brand.gold)
                             Text("Мій ліцей")
                                 .font(.largeTitle.weight(.heavy))
