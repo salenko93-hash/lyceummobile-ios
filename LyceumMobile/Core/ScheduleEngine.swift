@@ -1,7 +1,17 @@
 import Foundation
 
 public enum SchoolClock {
-    public static let kyiv = TimeZone(identifier: "Europe/Kyiv")!
+    public static let kyiv: TimeZone = {
+        if let value = TimeZone(identifier: "Europe/Kyiv") {
+            return value
+        }
+        // Older iOS 15 timezone databases may still use the legacy IANA name.
+        if let value = TimeZone(identifier: "Europe/Kiev") {
+            return value
+        }
+        // Last-resort fallback prevents an immediate launch crash.
+        return TimeZone.current
+    }()
 
     public static var calendar: Calendar {
         var value = Calendar(identifier: .gregorian)

@@ -68,4 +68,10 @@ final class ScheduleCoreTests: XCTestCase {
         XCTAssertEqual(calendar.label(for: "2026-10-14"), "Вихідний")
         XCTAssertEqual(calendar.label(for: "2027-01-01"), "Канікули")
     }
+
+    func testKyivTimezoneFallbackIsSafe() {
+        // Must never depend on force-unwrapping a timezone identifier.
+        XCTAssertFalse(SchoolClock.kyiv.identifier.isEmpty)
+        XCTAssertNotEqual(SchoolClock.displayTime(Date(timeIntervalSince1970: 0)), "")
+    }
 }

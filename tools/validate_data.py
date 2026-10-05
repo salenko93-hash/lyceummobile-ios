@@ -88,3 +88,9 @@ all_swift_ui = "\n".join(
 assert ".tracking(" not in all_swift_ui
 assert ".kerning(" not in all_swift_ui
 print("OK iOS 15 text-spacing compatibility: no .tracking()/.kerning().")
+
+schedule_core = (root/"LyceumMobile/Core/ScheduleEngine.swift").read_text(encoding="utf8")
+assert 'TimeZone(identifier: "Europe/Kyiv")!' not in schedule_core
+assert 'TimeZone(identifier: "Europe/Kiev")' in schedule_core
+assert 'return TimeZone.current' in schedule_core
+print("OK iOS 15-safe Kyiv/Kiev timezone fallback; no force unwrap at launch.")
