@@ -64,3 +64,9 @@ codemagic = (root/"codemagic.yaml").read_text(encoding="utf8")
 assert "IPHONEOS_DEPLOYMENT_TARGET=15.0" in codemagic
 assert "LyceumMobile-unsigned.ipa" in codemagic
 print("OK iOS 15 deployment target, compatibility scan and unsigned IPA workflow.")
+
+core_code = (root/"LyceumMobile/Core/ScheduleEngine.swift").read_text(encoding="utf8")
+assert "Date.FormatStyle" not in core_code
+assert ".formatted(style)" not in core_code
+assert 'formatter.dateFormat = "HH:mm"' in core_code
+print("OK shared Core avoids macOS 12-only Date.FormatStyle APIs.")

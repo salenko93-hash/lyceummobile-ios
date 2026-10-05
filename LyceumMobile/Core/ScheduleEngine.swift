@@ -49,17 +49,21 @@ public enum SchoolClock {
     }
 
     public static func displayDate(_ date: Date) -> String {
-        var style = Date.FormatStyle.dateTime.weekday(.wide).day().month(.wide)
-        style.locale = Locale(identifier: "uk_UA")
-        style.timeZone = kyiv
-        return date.formatted(style)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "uk_UA")
+        formatter.timeZone = kyiv
+        formatter.calendar = calendar
+        formatter.dateFormat = "EEEE, d MMMM"
+        return formatter.string(from: date)
     }
 
     public static func displayTime(_ date: Date) -> String {
-        var style = Date.FormatStyle.dateTime.hour().minute()
-        style.locale = Locale(identifier: "uk_UA")
-        style.timeZone = kyiv
-        return date.formatted(style)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "uk_UA")
+        formatter.timeZone = kyiv
+        formatter.calendar = calendar
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
     }
 }
 
