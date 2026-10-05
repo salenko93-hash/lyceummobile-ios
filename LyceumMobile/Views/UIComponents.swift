@@ -102,10 +102,10 @@ struct LessonRows: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(bell.time)
                             .font(.caption.monospacedDigit().weight(.semibold))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Brand.deepNavy.opacity(0.72))
                         if subjects.isEmpty || subjects.allSatisfy({ $0.subject.isEmpty }) {
                             Text("Немає уроку")
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(Brand.deepNavy.opacity(0.68))
                         } else {
                             ForEach(subjects.indices, id: \.self) { subjectIndex in
                                 let entry = subjects[subjectIndex]
@@ -122,7 +122,7 @@ struct LessonRows: View {
                                     if !details.isEmpty {
                                         Text(details)
                                             .font(.caption)
-                                            .foregroundStyle(.secondary)
+                                            .foregroundStyle(Brand.deepNavy.opacity(0.72))
                                     }
                                 }
                                 if subjectIndex < subjects.count - 1 {

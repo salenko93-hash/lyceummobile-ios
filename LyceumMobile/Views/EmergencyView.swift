@@ -66,6 +66,7 @@ struct EmergencyView: View {
                     }
                 }
                 .padding(15)
+                .foregroundStyle(Brand.navy)
                 .background(Brand.lightBackground,
                             in: RoundedRectangle(cornerRadius: 24))
 

@@ -94,3 +94,10 @@ assert 'TimeZone(identifier: "Europe/Kyiv")!' not in schedule_core
 assert 'TimeZone(identifier: "Europe/Kiev")' in schedule_core
 assert 'return TimeZone.current' in schedule_core
 print("OK iOS 15-safe Kyiv/Kiev timezone fallback; no force unwrap at launch.")
+
+ui_components = (root/"LyceumMobile/Views/UIComponents.swift").read_text(encoding="utf8")
+emergency_view = (root/"LyceumMobile/Views/EmergencyView.swift").read_text(encoding="utf8")
+assert 'Text(bell.time)' in ui_components
+assert 'Brand.deepNavy.opacity(0.72)' in ui_components
+assert '.foregroundStyle(Brand.navy)' in emergency_view
+print("OK emergency shelter timetable uses explicit dark text on light cards.")
