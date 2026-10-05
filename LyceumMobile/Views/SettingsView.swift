@@ -94,9 +94,8 @@ struct SettingsView: View {
             }
 
             Section("Google Sheets") {
-                TextField("HTTPS URL Google Apps Script /exec", text: $settings.googleSheetsURL,
-                          axis: .vertical)
-                    .lineLimit(2...4)
+                TextField("HTTPS URL Google Apps Script /exec",
+                          text: $settings.googleSheetsURL)
                     .keyboardType(.URL)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
@@ -118,9 +117,7 @@ struct SettingsView: View {
                           : "Локальний HTTPS /content_manifest.json",
                           text: settings.source == "GITHUB"
                           ? $settings.githubManifestURL
-                          : $settings.localManifestURL,
-                          axis: .vertical)
-                    .lineLimit(2...4)
+                          : $settings.localManifestURL)
                     .keyboardType(.URL)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
@@ -155,8 +152,18 @@ struct SettingsView: View {
             }
 
             Section("Про застосунок") {
-                LabeledContent("Версія", value: "LyceumMobile iOS 1.0")
-                LabeledContent("Оповіщення", value: "alerts.in.ua • UID 81")
+                HStack {
+                    Text("Версія")
+                    Spacer()
+                    Text("LyceumMobile iOS 1.0")
+                        .foregroundStyle(.secondary)
+                }
+                HStack {
+                    Text("Оповіщення")
+                    Spacer()
+                    Text("alerts.in.ua • UID 81")
+                        .foregroundStyle(.secondary)
+                }
                 Text("Розроблено на основі LyceumTV 2.7.0.2. Локальний кеш, чотири розклади та заміни.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -165,7 +172,6 @@ struct SettingsView: View {
                     .foregroundStyle(Brand.danger)
             }
         }
-        .scrollContentBackground(.hidden)
         .background(Brand.lightBackground)
         .navigationTitle("Налаштування")
         .onChange(of: settings.metronomeEnabled) { _ in model.updateMetronome() }

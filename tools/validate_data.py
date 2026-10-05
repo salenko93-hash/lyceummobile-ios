@@ -41,3 +41,26 @@ assert "AVAudioSession" in metronome_code
 appfiles = list((root/"LyceumMobile").rglob("*.swift"))
 assert len(appfiles) >= 18, len(appfiles)
 print(f"OK {len(appfiles)} Swift source files, four offline timetables, iOS Info.plist.")
+
+# iOS 15 compatibility contract.
+pbx = (root/"LyceumMobile.xcodeproj/project.pbxproj").read_text(encoding="utf8")
+assert pbx.count("IPHONEOS_DEPLOYMENT_TARGET = 15.0;") == 4
+assert "IPHONEOS_DEPLOYMENT_TARGET = 16.0;" not in pbx
+assert "CURRENT_PROJECT_VERSION = 2;" in pbx
+
+ios16_only = (
+    "NavigationStack", "NavigationSplitView", "LabeledContent",
+    "scrollContentBackground", "ShareLink", "PhotosPicker",
+    "presentationDetents", "toolbarBackground", "ViewThatFits",
+    "AnyLayout", "GridRow",
+)
+for source in appfiles:
+    code = source.read_text(encoding="utf8")
+    for symbol in ios16_only:
+        assert symbol not in code, (source.name, symbol)
+    assert not re.search(r"TextField\([\s\S]{0,300}?axis\s*:", code), source.name
+
+codemagic = (root/"codemagic.yaml").read_text(encoding="utf8")
+assert "IPHONEOS_DEPLOYMENT_TARGET=15.0" in codemagic
+assert "LyceumMobile-unsigned.ipa" in codemagic
+print("OK iOS 15 deployment target, compatibility scan and unsigned IPA workflow.")

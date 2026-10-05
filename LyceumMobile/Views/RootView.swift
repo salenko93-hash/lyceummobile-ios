@@ -6,46 +6,52 @@ struct RootView: View {
     var body: some View {
         ZStack {
             if model.isAlarm {
-                NavigationStack {
+                NavigationView {
                     EmergencyView(model: model)
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
             } else if model.isAllClear {
                 AllClearView()
             } else if model.isSilence {
                 MinuteSilenceView(model: model, isFullscreen: true)
             } else {
                 TabView {
-                    NavigationStack {
+                    NavigationView {
                         DashboardView(model: model)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("Головна", systemImage: "house.fill")
                     }
 
-                    NavigationStack {
+                    NavigationView {
                         TimetableView(model: model)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("Розклад", systemImage: "calendar")
                     }
 
-                    NavigationStack {
+                    NavigationView {
                         AnnouncementsView(model: model)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("Оголошення", systemImage: "megaphone.fill")
                     }
 
-                    NavigationStack {
+                    NavigationView {
                         MinuteSilenceView(model: model, isFullscreen: false)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("Пам'ять", systemImage: "flame")
                     }
 
-                    NavigationStack {
+                    NavigationView {
                         SettingsView(model: model)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("Налаштування", systemImage: "gearshape.fill")
                     }

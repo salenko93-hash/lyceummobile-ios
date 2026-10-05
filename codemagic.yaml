@@ -20,8 +20,23 @@ workflows:
             -destination 'generic/platform=iOS' \
             -derivedDataPath build/ios \
             CODE_SIGNING_ALLOWED=NO \
+            IPHONEOS_DEPLOYMENT_TARGET=15.0 \
             build
+      - name: Package unsigned IPA for Windows USB sideloading
+        script: |
+          set -euo pipefail
+          APP="$CM_BUILD_DIR/build/ios/Build/Products/Release-iphoneos/LyceumMobile.app"
+          test -d "$APP"
+          mkdir -p "$CM_BUILD_DIR/build/ios/ipa" "$CM_BUILD_DIR/build/ios/ipa-staging/Payload"
+          ditto "$APP" "$CM_BUILD_DIR/build/ios/ipa-staging/Payload/LyceumMobile.app"
+          ditto -c -k --keepParent \
+            "$CM_BUILD_DIR/build/ios/ipa-staging/Payload" \
+            "$CM_BUILD_DIR/build/ios/ipa/LyceumMobile-unsigned.ipa"
+          unzip -t "$CM_BUILD_DIR/build/ios/ipa/LyceumMobile-unsigned.ipa" > /dev/null
+          unzip -Z1 "$CM_BUILD_DIR/build/ios/ipa/LyceumMobile-unsigned.ipa" \
+            | grep -q '^Payload/LyceumMobile.app/Info.plist$'
     artifacts:
+      - build/ios/ipa/LyceumMobile-unsigned.ipa
       - build/ios/Build/Products/Release-iphoneos/LyceumMobile.app
       - /tmp/xcodebuild_logs/*.log
 

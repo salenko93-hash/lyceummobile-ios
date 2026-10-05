@@ -1,7 +1,7 @@
-# LyceumMobile iOS 1.0 — iPhone 14 Pro Max
+# LyceumMobile iOS 1.0 — iOS 15 / iPhone 7 Plus
 
 **Нативний SwiftUI-проєкт** на основі LyceumTV **2.7.0.2 UID 81**.
-Мінімальна версія: iOS 16.0. Інтерфейс адаптується до екрана iPhone 14 Pro Max.
+Мінімальна версія: **iOS 15.0**. Проєкт адаптовано для iPhone 7 Plus та новіших iPhone.
 
 ## Готові можливості
 
@@ -50,7 +50,7 @@ HTTPS-сервер. У цій версії віддалені файли за HT
 ## Проєкт
 
 ```text
-LyceumMobile-iOS-1.0/
+LyceumMobile-iOS-1.0-iOS15/
 ├── LyceumMobile.xcodeproj/               # готовий Xcode-проєкт, спільна схема
 ├── LyceumMobile/
 │   ├── LyceumMobileApp.swift
@@ -91,13 +91,16 @@ git push -u origin main
 Apple-ключі й alerts.in.ua токен у репозиторій.
 
 4. У https://codemagic.io підключіть свій приватний GitHub-репозиторій.
-   На сторінці застосунку ввімкніть конфігурацію `codemagic.yaml`
-   та оберіть **`ios-compile`**. Це спочатку перевірить Swift-тести й
-   збиратиме iOS застосунок **без підпису**. Непідписаний .app
-   **не встановлюється на iPhone**.
-5. Для встановлення на iPhone і TestFlight потрібні
-   **Apple Developer Program** та налаштування підпису.
-   Зареєструйте у Apple Developer bundle ID
+   На сторінці застосунку ввімкніть `codemagic.yaml` і оберіть
+   **`ios-compile`**. Workflow виконає тести, збере застосунок для
+   **iOS 15.0+** і створить `LyceumMobile-unsigned.ipa`.
+   Цей IPA ще не має Apple-підпису.
+5. Для локального тестового встановлення з Windows можна підписати
+   `LyceumMobile-unsigned.ipa` власним Apple ID у Sideloadly.
+   Безкоштовний підпис має обмеження Apple і зазвичай потребує
+   періодичного повторного підпису. Для **TestFlight/App Store**
+   потрібна оплачувана Apple Developer Program.
+   Для TestFlight зареєструйте bundle ID
    `ua.edu.cunl.lyceummobile` (або змініть його і в .pbxproj,
    і в `codemagic.yaml`), створіть ключ App Store Connect.
    У Codemagic створіть інтеграцію з точною назвою

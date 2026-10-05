@@ -1,4 +1,4 @@
-# Як з Windows установити LyceumMobile на iPhone 14 Pro Max
+# Як з Windows установити LyceumMobile на iPhone 7 Plus
 
 ## 1. Завантажити код
 
@@ -33,11 +33,12 @@ user.name "Ім'я"` і `git config --global user.email "email@example.com"`.
 5. Ця збірка підтверджує можливість компіляції на macOS, **але
    непідписаний застосунок не можна встановити на iPhone**.
 
-## 3. Підпис та TestFlight
+## 3. Локальний підпис з Windows або TestFlight
 
-Для справжнього встановлення, TestFlight і розповсюдження
-через App Store потрібні членство в Apple Developer Program,
-ідентифікатор застосунку та цифровий підпис.
+Для локального тестового встановлення `LyceumMobile-unsigned.ipa`
+можна підписати власним Apple ID через Sideloadly. Для TestFlight і
+App Store потрібна оплачувана Apple Developer Program, App ID та
+відповідний цифровий підпис.
 
 1. У https://developer.apple.com/account/
    зареєструйте App ID із Bundle ID `ua.edu.cunl.lyceummobile`.
